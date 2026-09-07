@@ -1301,28 +1301,50 @@
     .marquee__track {
       display: flex;
       width: max-content;
-      animation: slide 46s linear infinite;
+      will-change: transform;
+      /* --shift e --dur são calculados no JS a partir da largura real de um
+         grupo, então a velocidade em px/s é a mesma em qualquer tela. */
+      animation: marquee var(--dur, 32s) linear infinite;
     }
 
-    .marquee:hover .marquee__track {
+    .marquee:hover .marquee__track,
+    .marquee:focus-within .marquee__track {
       animation-play-state: paused;
     }
 
-    .marquee__track p {
+    @keyframes marquee {
+      to {
+        transform: translateX(calc(-1 * var(--shift, 50%)));
+      }
+    }
+
+    .marquee__group {
+      display: flex;
+      align-items: center;
+      flex: none;
+      gap: .5em;
+      padding-right: .5em;
       font-family: var(--font-display);
       font-size: clamp(2.25rem, 5.2vw, 3.75rem);
       font-weight: 600;
       letter-spacing: .04em;
       white-space: nowrap;
-      padding-right: 2.5rem;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(255, 255, 255, .16);
+      line-height: 1.15;
     }
 
-    @keyframes slide {
-      to {
-        transform: translateX(-50%);
-      }
+    /* Países em contorno, separadores em ouro sólido: dá leitura e ritmo */
+    .marquee__group b {
+      font-weight: 600;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(247, 245, 240, .30);
+    }
+
+    .marquee__group i {
+      font-style: normal;
+      font-size: .4em;
+      color: var(--gold);
+      opacity: .75;
+      transform: translateY(-.15em);
     }
 
     .continents {
@@ -2695,6 +2717,13 @@
       .grain {
         display: none;
       }
+
+      /* A regra global acima encerraria a animação no último quadro, deixando
+         um vão visível; aqui o letreiro simplesmente fica parado no início. */
+      .marquee__track {
+        animation: none !important;
+        transform: none !important;
+      }
     }
 
     @media print {
@@ -3044,11 +3073,8 @@
          ================================================================= -->
     <section id="paises" class="band band--alt" style="padding-top:0">
       <div class="marquee" aria-hidden="true">
-        <div class="marquee__track">
-          <p>França ✦ Itália ✦ Japão ✦ Espanha ✦ Canadá ✦ Portugal ✦ EUA ✦ Dubai ✦ Grécia ✦ Marrocos ✦ Tailândia ✦
-            Peru ✦&nbsp;</p>
-          <p>França ✦ Itália ✦ Japão ✦ Espanha ✦ Canadá ✦ Portugal ✦ EUA ✦ Dubai ✦ Grécia ✦ Marrocos ✦ Tailândia ✦
-            Peru ✦&nbsp;</p>
+        <div class="marquee__track" id="marqueeTrack">
+          <div class="marquee__group"><b>França</b><i>✦</i><b>Itália</b><i>✦</i><b>Japão</b><i>✦</i><b>Espanha</b><i>✦</i><b>Canadá</b><i>✦</i><b>Portugal</b><i>✦</i><b>Estados Unidos</b><i>✦</i><b>Dubai</b><i>✦</i><b>Grécia</b><i>✦</i><b>Marrocos</b><i>✦</i><b>Tailândia</b><i>✦</i><b>Peru</b><i>✦</i><b>Suíça</b><i>✦</i><b>Áustria</b><i>✦</i><b>Holanda</b><i>✦</i><b>Inglaterra</b><i>✦</i><b>Alemanha</b><i>✦</i><b>Argentina</b><i>✦</i><b>Índia</b><i>✦</i></div>
         </div>
       </div>
 
@@ -4179,6 +4205,51 @@
             dotTick = false;
           });
         }, { passive: true });
+      }
+
+      /* ===============================================================
+         LETREIRO DE PAÍSES — loop sem emenda em qualquer largura
+         =============================================================== */
+      var trilhoMarquee = document.getElementById('marqueeTrack');
+      if (trilhoMarquee) {
+        var VELOCIDADE = 90;              // pixels por segundo
+        var grupoBase = trilhoMarquee.firstElementChild;
+
+        function montarMarquee() {
+          // Volta ao estado inicial (um único grupo) antes de recalcular
+          while (trilhoMarquee.children.length > 1) {
+            trilhoMarquee.removeChild(trilhoMarquee.lastElementChild);
+          }
+
+          var larguraGrupo = grupoBase.getBoundingClientRect().width;
+          if (!larguraGrupo) return;
+
+          // Precisa cobrir a tela inteira MAIS um grupo de folga, senão
+          // aparece um buraco no ponto em que a animação reinicia.
+          var copias = Math.ceil(window.innerWidth / larguraGrupo);
+          for (var i = 0; i < copias; i++) {
+            trilhoMarquee.appendChild(grupoBase.cloneNode(true));
+          }
+
+          // Desloca exatamente a largura de um grupo: ao reiniciar, a cópia
+          // seguinte está no lugar exato da anterior.
+          trilhoMarquee.style.setProperty('--shift', larguraGrupo + 'px');
+          trilhoMarquee.style.setProperty('--dur', (larguraGrupo / VELOCIDADE).toFixed(2) + 's');
+        }
+
+        montarMarquee();
+
+        // Recalcula quando a tela muda de tamanho ou quando as fontes chegam
+        // (a fonte final muda a largura do texto).
+        var remontar;
+        window.addEventListener('resize', function () {
+          clearTimeout(remontar);
+          remontar = setTimeout(montarMarquee, 200);
+        }, { passive: true });
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(montarMarquee);
+        }
       }
 
       /* ===============================================================
