@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#05070E">
 
-  <title>Cláudia Mesti Viagens — Assessoria de Viagem Premium | 46 países</title>
+  <title>Cláudia Mesti Viagens | Assessoria de Viagem Premium</title>
   <meta name="description"
-    content="Assessoria de viagem premium com Cláudia Mesti, agente de turismo com 46 países visitados. Planeje sua viagem internacional sem erros: roteiro personalizado, documentação, bagagem, câmbio e suporte por WhatsApp durante a viagem.">
+    content="Assessoria de viagem com Cláudia Mesti, agente de turismo com 46 países no passaporte. Roteiro personalizado, documentação, bagagem, câmbio e suporte no WhatsApp durante a viagem.">
   <meta name="author" content="Cláudia Moccagatta Nobre Mesti">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://claudiamestiviagens.com.br/">
@@ -17,14 +17,14 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Cláudia Mesti Viagens">
-  <meta property="og:title" content="Cláudia Mesti Viagens — Assessoria de Viagem Premium">
+  <meta property="og:title" content="Cláudia Mesti Viagens | Assessoria de Viagem Premium">
   <meta property="og:description"
-    content="Viaje o mundo sem erros e sem imprevistos, com a orientação de quem já visitou 46 países.">
+    content="Viaje o mundo sem erros e sem imprevistos, com quem já visitou 46 países.">
   <meta property="og:url" content="https://claudiamestiviagens.com.br/">
   <meta property="og:image" content="https://claudiamestiviagens.com.br/assets/og-cover.jpg">
-  <meta property="og:image:alt" content="Cláudia Mesti Viagens — assessoria de viagem premium">
+  <meta property="og:image:alt" content="Cláudia Mesti Viagens, assessoria de viagem premium">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Cláudia Mesti Viagens — Assessoria de Viagem Premium">
+  <meta name="twitter:title" content="Cláudia Mesti Viagens | Assessoria de Viagem Premium">
   <meta name="twitter:description"
     content="Viaje o mundo sem erros e sem imprevistos, com a orientação de quem já visitou 46 países.">
   <meta name="twitter:image" content="https://claudiamestiviagens.com.br/assets/og-cover.jpg">
@@ -58,7 +58,7 @@
         "@type": "TravelAgency",
         "@id": "https://claudiamestiviagens.com.br/#business",
         "name": "Cláudia Mesti Viagens",
-        "description": "Assessoria de viagem premium: planejamento, documentação, bagagem, câmbio, segurança e suporte durante a viagem.",
+        "description": "Assessoria de viagem: planejamento, documentação, bagagem, câmbio, segurança e suporte durante a viagem.",
         "url": "https://claudiamestiviagens.com.br/",
         "image": "https://claudiamestiviagens.com.br/assets/og-cover.jpg",
         "priceRange": "R$$$",
@@ -100,12 +100,12 @@
           {
             "@type": "Question",
             "name": "Para quem é esse programa?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Para qualquer pessoa que queira viajar internacionalmente com mais segurança, organização e economia — seja a primeira viagem ou a décima." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Para quem quer viajar para fora com mais segurança e organização, seja a primeira viagem ou a décima." }
           },
           {
             "@type": "Question",
             "name": "Por quanto tempo dura o acompanhamento?",
-            "acceptedAnswer": { "@type": "Answer", "text": "De 3 a 4 meses, incluindo planejamento, conteúdo, preparação final, suporte durante a viagem e debriefing pós-retorno." }
+            "acceptedAnswer": { "@type": "Answer", "text": "De 3 a 4 meses, incluindo planejamento, conteúdo, preparação final, suporte durante a viagem e a conversa de fechamento na volta." }
           },
           {
             "@type": "Question",
@@ -115,7 +115,7 @@
           {
             "@type": "Question",
             "name": "O suporte durante a viagem é em tempo real?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Sim. Durante a viagem você tem canal direto com a Cláudia via WhatsApp para dúvidas, imprevistos e ajustes." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Sim. Durante a viagem você fala direto com a Cláudia no WhatsApp para dúvidas, imprevistos e ajustes." }
           },
           {
             "@type": "Question",
@@ -135,7 +135,7 @@
 
   <style>
     /* =====================================================================
-       DESIGN SYSTEM — tokens
+       Tokens
        ===================================================================== */
     :root {
       /* Superfícies */
@@ -311,7 +311,7 @@
       border: 0;
     }
 
-    /* Textura de filme — dá profundidade sem custo de imagem */
+    /* Grão sobre o fundo */
     .grain {
       position: fixed;
       inset: 0;
@@ -1156,10 +1156,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center;
+      /* Ajuste este valor se o rosto ficar mal enquadrado no corte */
+      object-position: 50% 30%;
     }
 
-    /* Placeholder honesto enquanto a foto real não é enviada */
+    /* Aparece quando a foto não está disponível */
     .portrait__fallback {
       position: absolute;
       inset: 0;
@@ -1302,8 +1303,8 @@
       display: flex;
       width: max-content;
       will-change: transform;
-      /* --shift e --dur são calculados no JS a partir da largura real de um
-         grupo, então a velocidade em px/s é a mesma em qualquer tela. */
+      /* --shift e --dur vêm do JS, calculados sobre a largura real de um
+         grupo, para manter a mesma velocidade em px/s em qualquer tela. */
       animation: marquee var(--dur, 32s) linear infinite;
     }
 
@@ -1332,7 +1333,7 @@
       line-height: 1.15;
     }
 
-    /* Países em contorno, separadores em ouro sólido: dá leitura e ritmo */
+    /* Países em contorno, separadores em ouro */
     .marquee__group b {
       font-weight: 600;
       color: transparent;
@@ -2387,7 +2388,7 @@
     }
 
     /* =====================================================================
-       TELAS BAIXAS (notebooks 720p) — mantém o CTA na primeira dobra
+       Telas baixas (notebooks 720p)
        ===================================================================== */
     @media (min-width: 1081px) and (max-height: 820px) {
       :root {
@@ -2421,7 +2422,7 @@
     }
 
     /* =====================================================================
-       RESPONSIVO — tablet
+       Tablet
        ===================================================================== */
     @media (max-width: 1080px) {
       :root {
@@ -2504,7 +2505,7 @@
     }
 
     /* =====================================================================
-       RESPONSIVO — mobile
+       Mobile
        ===================================================================== */
     @media (max-width: 720px) {
       :root {
@@ -2691,7 +2692,7 @@
     }
 
     /* =====================================================================
-       PREFERÊNCIAS DO USUÁRIO
+       Preferências do usuário
        ===================================================================== */
     @media (prefers-reduced-motion: reduce) {
 
@@ -2718,8 +2719,8 @@
         display: none;
       }
 
-      /* A regra global acima encerraria a animação no último quadro, deixando
-         um vão visível; aqui o letreiro simplesmente fica parado no início. */
+      /* A regra global acima pararia a animação no último quadro, deixando
+         um vão. Aqui ele fica parado no início. */
       .marquee__track {
         animation: none !important;
         transform: none !important;
@@ -2752,7 +2753,7 @@
   <div class="grain" aria-hidden="true"></div>
 
   <!-- ===================================================================
-       SPRITE DE ÍCONES — SVG vetorial, zero requisições, nítido em retina
+       Sprite de ícones
        =================================================================== -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
@@ -2871,7 +2872,7 @@
        =================================================================== -->
   <header class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#topo" class="brand" aria-label="Cláudia Mesti Viagens — início">Cláudia Mesti <span>Viagens</span></a>
+      <a href="#topo" class="brand" aria-label="Cláudia Mesti Viagens, ir para o início">Cláudia Mesti <span>Viagens</span></a>
 
       <nav class="nav__links" aria-label="Navegação principal">
         <a href="#sobre">Sobre</a>
@@ -2924,8 +2925,8 @@
           <p class="hero__kicker" data-reveal style="--d:160ms">Com quem já visitou 46 países</p>
 
           <p class="hero__desc" data-reveal style="--d:220ms">
-            Aprenda a organizar cada detalhe da sua viagem de forma inteligente, econômica e segura — com a orientação
-            de quem viveu de perto tudo que pode dar errado.
+            Você organiza cada detalhe da viagem com quem já passou por tudo que pode dar errado lá fora. Menos
+            susto, menos dinheiro jogado fora, mais viagem.
           </p>
 
           <div class="hero__actions" data-reveal style="--d:280ms">
@@ -3008,8 +3009,8 @@
       <div class="shell about__grid">
         <div class="portrait" data-reveal>
           <div class="portrait__frame">
-            <!-- Troque por assets/claudia.jpg. Enquanto o arquivo não existir,
-                 o monograma abaixo aparece automaticamente (sem imagem quebrada). -->
+            <!-- Foto em assets/claudia.jpg. Sem o arquivo, entra o monograma abaixo.
+                 Se o enquadramento cortar mal, ajuste object-position em .portrait__frame img -->
             <img id="claudiaFoto" src="assets/claudia.jpg" alt="Cláudia Mesti, assessora de viagens" width="440"
               height="550" loading="lazy" decoding="async">
             <div class="portrait__fallback" id="claudiaFallback" hidden>
@@ -3028,13 +3029,13 @@
           <hr class="rule" data-reveal style="--d:100ms">
 
           <p class="about__body" data-reveal style="--d:140ms">
-            Cláudia Moccagatta Nobre Mesti é agente de turismo, fundadora da <strong>@tixturismosinop</strong> e uma das
-            vozes mais autênticas sobre viagens internacionais do Brasil. Com <strong>46 países visitados</strong> e
-            contando, ela transformou cada destino em aprendizado real.
+            Cláudia Moccagatta Nobre Mesti é agente de turismo e fundadora da <strong>@tixturismosinop</strong>, em Sinop.
+            São <strong>46 países</strong> no passaporte, e de cada um deles ela voltou com uma lista de coisas que
+            ninguém conta antes de você embarcar.
           </p>
           <p class="about__body" data-reveal style="--d:180ms">
-            Do que cabe na mala ao que não pode faltar no seguro-viagem, Cláudia conhece na prática cada detalhe que
-            separa uma viagem inesquecível de um pesadelo com passagem de volta.
+            Do que cabe na mala ao que não pode faltar no seguro, ela já viu de perto o que separa uma viagem
+            inesquecível de um perrengue com data de volta marcada.
           </p>
 
           <div class="facts">
@@ -3042,26 +3043,26 @@
               <svg class="ico" aria-hidden="true">
                 <use href="#i-globe" />
               </svg>
-              <span><b>46 países visitados</b><span>Europa, Ásia, Américas, Oriente Médio e além</span></span>
+              <span><b>46 países visitados</b><span>Europa, Ásia, Américas, Oriente Médio e África</span></span>
             </div>
             <div class="fact" data-reveal style="--d:260ms">
               <svg class="ico" aria-hidden="true">
                 <use href="#i-building" />
               </svg>
-              <span><b>Agência própria em Sinop-MT</b><span>@tixturismosinop — turismo personalizado</span></span>
+              <span><b>Agência própria em Sinop, MT</b><span>@tixturismosinop, turismo personalizado</span></span>
             </div>
             <div class="fact" data-reveal style="--d:300ms">
               <svg class="ico" aria-hidden="true">
                 <use href="#i-instagram" />
               </svg>
-              <span><b>+1.400 seguidores no Instagram</b><span>Conteúdo real, viagens reais, resultados
-                  reais</span></span>
+              <span><b>+1.400 seguidores no Instagram</b><span>Os bastidores das viagens, quase todo
+                  dia</span></span>
             </div>
             <div class="fact" data-reveal style="--d:340ms">
               <svg class="ico" aria-hidden="true">
                 <use href="#i-cap" />
               </svg>
-              <span><b>Mentora de viajantes</b><span>Da organização ao embarque — sem estresse</span></span>
+              <span><b>Mentora de viajantes</b><span>Acompanha você da primeira ideia até o embarque</span></span>
             </div>
           </div>
         </div>
@@ -3169,8 +3170,8 @@
           <p class="eyebrow" data-reveal>Por que você precisa disso</p>
           <h2 class="h2" data-reveal style="--d:60ms">Viajar sem preparo<br>pode custar <em>caro.</em></h2>
           <hr class="rule" data-reveal style="--d:100ms">
-          <p class="lede" data-reveal style="--d:140ms">Histórias reais de viajantes que poderiam ter evitado problemas
-            com o conhecimento certo.</p>
+          <p class="lede" data-reveal style="--d:140ms">Situações que a Cláudia vê acontecer o tempo todo, e que dava
+            para evitar.</p>
         </div>
 
         <div class="cases">
@@ -3181,8 +3182,8 @@
               </svg> Caso real
             </p>
             <h3>“Levei 30 kg de bagagem e paguei mais de R$ 2.000 em excesso”</h3>
-            <p>Uma viajante que saiu de São Paulo rumo à Europa não sabia das regras de bagagem de cada companhia
-              aérea. O que seria uma economia virou um prejuízo evitável.</p>
+            <p>Cada companhia tem uma regra de bagagem, e ela muda conforme a tarifa que você comprou. Quem descobre
+              isso no balcão do check-in paga caro.</p>
           </article>
 
           <article class="case" data-reveal style="--d:80ms">
@@ -3192,8 +3193,8 @@
               </svg> Caso real
             </p>
             <h3>“Fui barrada na imigração por falta de um documento que eu nem sabia que precisava”</h3>
-            <p>Uma turista brasileira perdeu a viagem inteira dos sonhos por não ter verificado os requisitos de entrada
-              do país — informação que muda constantemente.</p>
+            <p>Exigência de entrada muda de um mês para o outro. Passagem comprada e hotel pago não garantem nada se
+              faltar um papel na hora da imigração.</p>
           </article>
 
           <article class="case" data-reveal style="--d:40ms">
@@ -3203,8 +3204,8 @@
               </svg> Caso real
             </p>
             <h3>“Comprei um pacote online sem saber o que estava incluído e a surpresa foi horrível”</h3>
-            <p>Sem assessoria de quem entende o mercado, muitos viajantes caem em armadilhas de pacotes que parecem
-              completos, mas escondem custos invisíveis.</p>
+            <p>Tem pacote que parece completo no anúncio e cobra traslado, taxa de hotel e passeio à parte depois. Quem
+              conhece o mercado lê isso antes de pagar.</p>
           </article>
 
           <article class="case" data-reveal style="--d:120ms">
@@ -3214,15 +3215,14 @@
               </svg> Caso real
             </p>
             <h3>“Fui roubado na Europa por seguir dicas de grupos aleatórios do WhatsApp”</h3>
-            <p>A desinformação sobre segurança em destinos específicos é uma das maiores causas de problemas em viagens
-              internacionais para brasileiros.</p>
+            <p>Grupo de WhatsApp não sabe em que rua você não deve andar às dez da noite, nem qual estação de metrô é
+              ponto de batedor de carteira.</p>
           </article>
         </div>
 
         <div class="cta-box" data-reveal>
           <h3>Tudo isso <em>poderia ter sido evitado.</em></h3>
-          <p>Com o conhecimento certo, uma assessoria especializada e o acompanhamento de quem já viveu tudo isso, sua
-            viagem será completamente diferente.</p>
+          <p>Nenhuma dessas situações é azar. É falta de alguém do lado avisando antes.</p>
           <a href="#investimento" class="btn">Quero evitar esses erros
             <svg class="ico" aria-hidden="true">
               <use href="#i-arrow" />
@@ -3241,8 +3241,8 @@
           <p class="eyebrow" data-reveal>O programa</p>
           <h2 class="h2" data-reveal style="--d:60ms">O que você vai<br><em>aprender</em> e dominar.</h2>
           <hr class="rule" data-reveal style="--d:100ms">
-          <p class="lede" data-reveal style="--d:140ms">Um programa completo de assessoria que acompanha você por meses,
-            do planejamento ao retorno — transformando você num viajante inteligente e confiante.</p>
+          <p class="lede" data-reveal style="--d:140ms">Assessoria que acompanha você por meses, da primeira conversa
+            até a volta para casa.</p>
         </div>
 
         <div class="modules">
@@ -3254,11 +3254,11 @@
               </svg>
             </div>
             <h3>Planejamento estratégico</h3>
-            <p>Como escolher destino, época certa e montar um roteiro que realmente funciona.</p>
+            <p>Como escolher o destino, a época certa e montar um roteiro que cabe no seu tempo.</p>
             <ul>
               <li>Como definir seu destino ideal</li>
               <li>Melhor época para cada país</li>
-              <li>Roteiro dia a dia inteligente</li>
+              <li>Roteiro dia a dia</li>
             </ul>
           </article>
 
@@ -3290,7 +3290,7 @@
             <ul>
               <li>Vistos por país e prazo</li>
               <li>Passaporte e validade</li>
-              <li>Checklist completo pré-viagem</li>
+              <li>Checklist de documentos</li>
             </ul>
           </article>
 
@@ -3302,7 +3302,7 @@
               </svg>
             </div>
             <h3>Gestão financeira</h3>
-            <p>Economize sem abrir mão do conforto. Saiba onde gastar e onde economizar.</p>
+            <p>Onde vale gastar e onde dá para cortar sem perder conforto.</p>
             <ul>
               <li>Câmbio e cartões internacionais</li>
               <li>Orçamento realista por destino</li>
@@ -3318,7 +3318,7 @@
               </svg>
             </div>
             <h3>Segurança internacional</h3>
-            <p>Viaje com confiança, sabendo exatamente como proteger você e seus pertences.</p>
+            <p>O que fazer para não virar alvo fácil, e o que fazer se mesmo assim acontecer.</p>
             <ul>
               <li>Zonas de risco por destino</li>
               <li>Golpes comuns e como evitar</li>
@@ -3334,10 +3334,10 @@
               </svg>
             </div>
             <h3>Experiências autênticas</h3>
-            <p>Vá além dos pontos turísticos. Descubra como viajantes experientes realmente vivem o destino.</p>
+            <p>Onde comer, como circular e o que fazer longe da fila de turista.</p>
             <ul>
               <li>Restaurantes locais vs. turísticos</li>
-              <li>Transporte local inteligente</li>
+              <li>Como circular de metrô e trem</li>
               <li>Fotografia e registros da viagem</li>
             </ul>
           </article>
@@ -3355,10 +3355,9 @@
             <h4>
               <svg class="ico" aria-hidden="true">
                 <use href="#i-search" />
-              </svg> Diagnóstico e planejamento
+              </svg> Definição do destino
             </h4>
-            <p>Primeira conversa aprofundada, definição do destino, orçamento, datas e criação do roteiro personalizado
-              junto com a Cláudia.</p>
+            <p>Uma conversa longa para definir destino, orçamento e datas, e montar o roteiro junto com a Cláudia.</p>
           </article>
 
           <article class="tl" data-reveal>
@@ -3366,7 +3365,7 @@
             <h4>
               <svg class="ico" aria-hidden="true">
                 <use href="#i-book" />
-              </svg> Capacitação e organização
+              </svg> Conteúdo e organização
             </h4>
             <p>Acesso ao conteúdo completo do programa, suporte para reservas, orientação sobre documentação e compra de
               passagens.</p>
@@ -3390,8 +3389,7 @@
                 <use href="#i-phone" />
               </svg> Suporte em tempo real
             </h4>
-            <p>Canal de comunicação direta com a Cláudia para dúvidas, imprevistos e ajustes de última hora durante a
-              sua viagem.</p>
+            <p>Você fala direto com a Cláudia para dúvidas, imprevistos e ajustes de última hora enquanto está fora.</p>
           </article>
 
           <article class="tl" data-reveal>
@@ -3399,10 +3397,10 @@
             <h4>
               <svg class="ico" aria-hidden="true">
                 <use href="#i-bulb" />
-              </svg> Debriefing e próximas aventuras
+              </svg> Conversa de fechamento
             </h4>
-            <p>Sessão de fechamento para registrar aprendizados, avaliar a viagem e planejar as próximas — porque quem
-              viaja uma vez, não para mais.</p>
+            <p>A gente senta para ver o que funcionou, o que você faria diferente e já começa a pensar na próxima.
+              Porque sempre tem uma próxima.</p>
           </article>
         </div>
       </div>
@@ -3427,7 +3425,7 @@
                 <use href="#i-chat" />
               </svg>
               <h3>Primeira conversa</h3>
-              <p>Você conta seus sonhos, medos e expectativas. A Cláudia entende exatamente o que você precisa.</p>
+              <p>Você conta para onde quer ir, o que te preocupa e quanto pretende gastar.</p>
             </div>
           </div>
 
@@ -3460,7 +3458,7 @@
                 <use href="#i-plane" />
               </svg>
               <h3>Embarque com confiança</h3>
-              <p>Você parte sabendo exatamente o que fazer — e com suporte caso algo inesperado aconteça.</p>
+              <p>Você embarca sabendo o que fazer, e com a Cláudia a uma mensagem de distância se algo sair do previsto.</p>
             </div>
           </div>
         </div>
@@ -3591,15 +3589,15 @@
           <p class="eyebrow" data-reveal>Investimento</p>
           <h2 class="h2" data-reveal style="--d:60ms">Uma viagem dos sonhos<br><em>começa aqui.</em></h2>
           <hr class="rule" data-reveal style="--d:100ms">
-          <p class="lede" data-reveal style="--d:140ms">Meses de acompanhamento próximo, conteúdo premium e suporte real
-            de quem já percorreu 46 países.</p>
+          <p class="lede" data-reveal style="--d:140ms">Três a quatro meses de acompanhamento com quem já percorreu 46
+            países.</p>
         </div>
 
         <div class="plan" data-reveal>
           <div class="plan__top">
             <div>
               <p class="plan__label">Programa completo</p>
-              <p class="plan__name">Assessoria<br>Viagem Premium</p>
+              <p class="plan__name">Assessoria de<br>Viagem Premium</p>
               <p class="plan__desc">Acompanhamento personalizado de 3 a 4 meses, do planejamento ao retorno da sua
                 viagem.</p>
             </div>
@@ -3645,7 +3643,7 @@
               <li>
                 <svg class="ico" aria-hidden="true">
                   <use href="#i-check" />
-                </svg> Sessão de debriefing pós-viagem
+                </svg> Conversa de fechamento na volta
               </li>
               <li>
                 <svg class="ico" aria-hidden="true">
@@ -3662,15 +3660,15 @@
                   <use href="#i-wa" />
                 </svg> Quero garantir minha vaga
               </a>
-              <p class="plan__scarcity"><span class="dot" aria-hidden="true"></span> Vagas limitadas por mês para
-                garantir a qualidade</p>
+              <p class="plan__scarcity"><span class="dot" aria-hidden="true"></span> A Cláudia atende poucas pessoas por
+                mês</p>
 
               <div class="guarantee">
                 <svg class="ico" aria-hidden="true">
                   <use href="#i-shield" />
                 </svg>
-                <p><strong>Sem riscos.</strong> Se nas primeiras 2 sessões você sentir que o programa não é para você,
-                  devolvemos 100% do seu investimento. Sem perguntas.</p>
+                <p><strong>Sem risco.</strong> Se nas duas primeiras sessões você sentir que não é para você, devolvemos
+                  os 100%. Sem burocracia.</p>
               </div>
             </div>
           </div>
@@ -3697,10 +3695,9 @@
               </button>
             </h3>
             <div class="faq__a" id="faq-1" role="region" aria-labelledby="faq-q-1">
-              <p>Para qualquer pessoa que queira viajar internacionalmente com mais segurança, organização e economia —
-                seja a sua primeira viagem ou a décima. Se você se perde no planejamento, tem medo de errar nos
-                documentos, não sabe o que colocar na mala ou quer parar de desperdiçar dinheiro em erros evitáveis,
-                esse programa é para você.</p>
+              <p>Para quem quer viajar para fora com mais segurança e organização, seja a sua primeira viagem ou a
+                décima. Se você trava no planejamento, tem medo de errar nos documentos, não sabe o que colocar na
+                mala ou está cansada de perder dinheiro com erro bobo, esse programa é para você.</p>
             </div>
           </div>
 
@@ -3713,8 +3710,8 @@
             </h3>
             <div class="faq__a" id="faq-2" role="region" aria-labelledby="faq-q-2">
               <p>O programa completo tem duração de 3 a 4 meses, dependendo da sua viagem. Esse período inclui o
-                planejamento, a imersão no conteúdo, a preparação final, o suporte durante a viagem e a sessão de
-                debriefing pós-retorno.</p>
+                planejamento, a imersão no conteúdo, a preparação final, o suporte durante a viagem e a conversa
+                de fechamento na volta.</p>
             </div>
           </div>
 
@@ -3726,9 +3723,8 @@
               </button>
             </h3>
             <div class="faq__a" id="faq-3" role="region" aria-labelledby="faq-q-3">
-              <p>Sim. O programa foi criado para quem tem vida agitada: o conteúdo pode ser acessado no seu ritmo e os
-                encontros com a Cláudia são agendados de acordo com a sua disponibilidade. O importante é o resultado,
-                não o formato rígido.</p>
+              <p>Sim. O conteúdo você acessa no seu ritmo e os encontros com a Cláudia são marcados conforme a sua
+                agenda. Ninguém aqui vai te cobrar horário de aula.</p>
             </div>
           </div>
 
@@ -3740,9 +3736,9 @@
               </button>
             </h3>
             <div class="faq__a" id="faq-4" role="region" aria-labelledby="faq-q-4">
-              <p>Sim. Durante o período da sua viagem você terá canal de comunicação direta com a Cláudia via WhatsApp
-                para dúvidas, imprevistos e ajustes. Ela conhece os bastidores de destinos ao redor do mundo e está do
-                seu lado mesmo a quilômetros de distância.</p>
+              <p>Sim. Enquanto você estiver fora, fala com a Cláudia direto no WhatsApp para dúvidas, imprevistos e
+                ajustes. Ela conhece os bastidores desses destinos e continua do seu lado mesmo a milhares de
+                quilômetros.</p>
             </div>
           </div>
 
@@ -3754,9 +3750,9 @@
               </button>
             </h3>
             <div class="faq__a" id="faq-5" role="region" aria-labelledby="faq-q-5">
-              <p>Perfeito — a primeira sessão do programa é justamente para isso. Com base no seu perfil, seus
-                interesses, seu orçamento e suas datas, a Cláudia vai ajudar você a escolher o destino ideal e
-                transformar um sonho vago em um plano concreto.</p>
+              <p>Perfeito. A primeira sessão serve justamente para isso. A partir do seu perfil, dos seus interesses, do
+                orçamento e das datas, a Cláudia ajuda você a escolher o destino e transformar uma vontade solta em
+                plano com data marcada.</p>
             </div>
           </div>
 
@@ -3768,9 +3764,8 @@
               </button>
             </h3>
             <div class="faq__a" id="faq-6" role="region" aria-labelledby="faq-q-6">
-              <p>Se após as duas primeiras sessões você sentir que o programa não é o que esperava, basta nos avisar e
-                devolvemos 100% do investimento. Sem burocracia, sem perguntas. Queremos que você embarque convicto de
-                que foi a melhor decisão.</p>
+              <p>Se depois das duas primeiras sessões você sentir que não é o que esperava, é só avisar que devolvemos os
+                100%. Sem burocracia. A ideia é que você embarque tranquila, não presa a um contrato.</p>
             </div>
           </div>
         </div>
@@ -3784,10 +3779,10 @@
       <div class="shell center">
         <p class="eyebrow" data-reveal>Bastidores</p>
         <h2 class="h2" data-reveal style="--d:60ms">Siga a jornada da <em>Cláudia</em></h2>
-        <p class="lede center" data-reveal style="--d:100ms;margin-bottom:.5rem">@claudiamestiviagens — conteúdo real
-          de quem realmente viaja</p>
+        <p class="lede center" data-reveal style="--d:100ms;margin-bottom:.5rem">@claudiamestiviagens, os bastidores de quem
+          está sempre viajando</p>
 
-        <!-- Widget opcional (Elfsight). Se não carregar, a galeria abaixo garante a seção. -->
+        <!-- Widget Elfsight, opcional. Sem ele, fica a galeria abaixo. -->
         <div class="ig__embed elfsight-app-accc0f55-b407-495f-af72-612d82778aa6" data-elfsight-app-lazy></div>
 
         <div class="ig__grid" data-reveal style="margin-top:2.5rem">
@@ -3829,8 +3824,8 @@
       <div class="shell">
         <p class="eyebrow" data-reveal style="justify-content:center">Próximo embarque</p>
         <h2 data-reveal style="--d:60ms">A sua próxima viagem pode ser<br>a <em>melhor da sua vida.</em></h2>
-        <p class="lede center" data-reveal style="--d:100ms;margin:0 auto 2rem">Converse com a Cláudia sem compromisso e
-          descubra em poucos minutos como seria o seu planejamento.</p>
+        <p class="lede center" data-reveal style="--d:100ms;margin:0 auto 2rem">Chama a Cláudia no WhatsApp e conta para onde
+          você quer ir. A primeira conversa não custa nada.</p>
         <a class="btn" data-wa
           href="https://wa.me/5566999999999?text=Oi%20Cl%C3%A1udia!%20Quero%20conversar%20sobre%20a%20minha%20pr%C3%B3xima%20viagem."
           target="_blank" rel="noopener" data-reveal style="--d:140ms">
@@ -3850,8 +3845,7 @@
       <div class="foot__grid">
         <div class="foot__brand">
           <a href="#topo" class="brand">Cláudia Mesti <span>Viagens</span></a>
-          <p>Assessoria de viagem premium para quem quer vivenciar o mundo com confiança, segurança e sem
-            desperdício.</p>
+          <p>Assessoria de viagem para quem quer conhecer o mundo sem passar perrengue.</p>
           <div class="socials">
             <a href="https://www.instagram.com/claudiamestiviagens" target="_blank" rel="noopener"
               aria-label="Instagram de Cláudia Mesti Viagens">
@@ -3927,14 +3921,14 @@
   </div>
 
   <!-- =================================================================
-       SCRIPTS
+       Scripts
        ================================================================= -->
   <script>
     (function () {
       'use strict';
 
       /* ===============================================================
-         CONFIGURAÇÃO — altere apenas aqui
+         Configuração
          =============================================================== */
       var CONFIG = {
         // Número do WhatsApp no formato internacional: 55 + DDD + número.
@@ -3948,16 +3942,16 @@
 
       body.classList.remove('no-js');
 
-      /* --- WhatsApp: um número, todos os links ---------------------- */
+      /* Aplica o número configurado em todos os links de WhatsApp */
       document.querySelectorAll('a[data-wa]').forEach(function (a) {
         a.href = a.href.replace(/wa\.me\/\d+/, 'wa.me/' + CONFIG.whatsapp);
       });
 
-      /* --- Ano do rodapé sempre atual ------------------------------- */
+      /* Ano do rodapé */
       var ano = document.getElementById('ano');
       if (ano) ano.textContent = new Date().getFullYear();
 
-      /* --- Foto da Cláudia: fallback elegante se o arquivo faltar --- */
+      /* Fallback caso o arquivo da foto não exista */
       var foto = document.getElementById('claudiaFoto');
       var fotoAlt = document.getElementById('claudiaFallback');
       if (foto && fotoAlt) {
@@ -3970,7 +3964,7 @@
       }
 
       /* ===============================================================
-         REVELAÇÃO NO SCROLL
+         Reveal no scroll
          =============================================================== */
       var revealables = document.querySelectorAll('[data-reveal], .tl');
       if ('IntersectionObserver' in window) {
@@ -3988,7 +3982,7 @@
       }
 
       /* ===============================================================
-         CONTADORES ANIMADOS (baseados em tempo, não em frames)
+         Contadores
          =============================================================== */
       function contar(el) {
         var alvo = parseInt(el.dataset.count, 10);
@@ -4018,7 +4012,7 @@
       }
 
       /* ===============================================================
-         SCROLL — um único laço com rAF (performance)
+         Scroll
          =============================================================== */
       var nav = document.getElementById('nav');
       var progresso = document.getElementById('progress');
@@ -4041,7 +4035,7 @@
 
         if (scrollHint) scrollHint.style.opacity = y > 120 ? '0' : '1';
 
-        // CTA flutuante: aparece após a dobra e some sobre a seção de preço
+        // Some sobre a seção de preço para não competir com o botão principal
         if (floatCta) {
           var precoVisivel = false;
           if (precoSec) {
@@ -4051,7 +4045,7 @@
           floatCta.classList.toggle('is-on', y > 620 && !precoVisivel);
         }
 
-        // Linha da timeline preenche conforme a leitura
+        // Preenchimento da linha da timeline
         if (timeline && tlFill) {
           var tr = timeline.getBoundingClientRect();
           var p = (window.innerHeight * 0.6 - tr.top) / tr.height;
@@ -4070,7 +4064,7 @@
       aoRolar();
 
       /* ===============================================================
-         LINK ATIVO NA NAVEGAÇÃO
+         Link ativo na navegação
          =============================================================== */
       var links = Array.prototype.slice.call(document.querySelectorAll('.nav__links a'));
       var secoes = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
@@ -4088,7 +4082,7 @@
       }
 
       /* ===============================================================
-         MENU MOBILE
+         Menu mobile
          =============================================================== */
       var burger = document.getElementById('burger');
       var painel = document.getElementById('nav-panel');
@@ -4125,7 +4119,7 @@
       }, { passive: true });
 
       /* ===============================================================
-         FAQ — acordeão acessível com altura real
+         FAQ
          =============================================================== */
       var faqRoot = document.getElementById('faqRoot');
       if (faqRoot) {
@@ -4159,7 +4153,7 @@
           });
         });
 
-        // Reajusta a altura da resposta aberta quando a tela muda de tamanho
+        // Reajusta a resposta aberta no resize
         window.addEventListener('resize', function () {
           perguntas.forEach(function (btn) {
             if (btn.getAttribute('aria-expanded') === 'true') {
@@ -4170,7 +4164,7 @@
       }
 
       /* ===============================================================
-         DEPOIMENTOS — indicadores do carrossel mobile
+         Indicadores do carrossel de depoimentos
          =============================================================== */
       var trilho = document.getElementById('testis');
       var dots = document.getElementById('testiDots');
@@ -4208,7 +4202,7 @@
       }
 
       /* ===============================================================
-         LETREIRO DE PAÍSES — loop sem emenda em qualquer largura
+         Letreiro de países
          =============================================================== */
       var trilhoMarquee = document.getElementById('marqueeTrack');
       if (trilhoMarquee) {
@@ -4224,23 +4218,23 @@
           var larguraGrupo = grupoBase.getBoundingClientRect().width;
           if (!larguraGrupo) return;
 
-          // Precisa cobrir a tela inteira MAIS um grupo de folga, senão
-          // aparece um buraco no ponto em que a animação reinicia.
+          // Cobre a viewport mais um grupo de folga, senão abre um vão
+          // no ponto em que a animação reinicia.
           var copias = Math.ceil(window.innerWidth / larguraGrupo);
           for (var i = 0; i < copias; i++) {
             trilhoMarquee.appendChild(grupoBase.cloneNode(true));
           }
 
-          // Desloca exatamente a largura de um grupo: ao reiniciar, a cópia
-          // seguinte está no lugar exato da anterior.
+          // Desloca a largura de um grupo, de modo que ao reiniciar a
+          // cópia seguinte ocupe a posição da anterior.
           trilhoMarquee.style.setProperty('--shift', larguraGrupo + 'px');
           trilhoMarquee.style.setProperty('--dur', (larguraGrupo / VELOCIDADE).toFixed(2) + 's');
         }
 
         montarMarquee();
 
-        // Recalcula quando a tela muda de tamanho ou quando as fontes chegam
-        // (a fonte final muda a largura do texto).
+        // Recalcula no resize e quando as fontes carregam, já que a fonte
+        // final altera a largura do texto.
         var remontar;
         window.addEventListener('resize', function () {
           clearTimeout(remontar);
@@ -4253,7 +4247,7 @@
       }
 
       /* ===============================================================
-         PARALLAX SUAVE DA COLAGEM (apenas mouse, apenas desktop)
+         Parallax da colagem (mouse, desktop)
          =============================================================== */
       var colagem = document.getElementById('collage');
       if (colagem && !reduced && window.matchMedia('(pointer: fine)').matches) {
@@ -4267,7 +4261,7 @@
       }
 
       /* ===============================================================
-         CÉU ESTRELADO — canvas leve, pausa fora da tela
+         Céu estrelado
          =============================================================== */
       var canvas = document.getElementById('stars');
       if (canvas && !reduced) {
@@ -4279,7 +4273,7 @@
 
         function medir() {
           // Mede o próprio canvas (que preenche o hero via inset:0) em vez de
-          // forçar largura em px — assim nunca ultrapassa a viewport.
+          // forçar largura em px, que estouraria a viewport.
           var r = canvas.getBoundingClientRect();
           var w = Math.max(1, Math.round(r.width));
           var h = Math.max(1, Math.round(r.height));
@@ -4287,7 +4281,7 @@
           canvas.height = Math.floor(h * dpr);
           ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-          // Densidade proporcional à área — mobile ganha menos estrelas
+          // Densidade proporcional à área.
           var qtd = Math.round(Math.min((w * h) / 9000, 170));
           estrelas = [];
           for (var i = 0; i < qtd; i++) {
@@ -4326,7 +4320,7 @@
           redimensionar = setTimeout(medir, 180);
         }, { passive: true });
 
-        // Não gasta bateria quando o hero sai da tela ou a aba fica oculta
+        // Pausa fora da tela e em aba oculta
         if ('IntersectionObserver' in window) {
           new IntersectionObserver(function (entries) {
             entries[0].isIntersecting ? ligar() : desligar();
@@ -4339,7 +4333,7 @@
     })();
   </script>
 
-  <!-- Widget do Instagram (opcional). Removível sem quebrar a seção. -->
+  <!-- Instagram (opcional) -->
   <script src="https://elfsightcdn.com/platform.js" async defer></script>
 </body>
 

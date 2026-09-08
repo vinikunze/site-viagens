@@ -1,12 +1,12 @@
-# Imagens do site
+# Imagens
 
-Coloque aqui os arquivos abaixo. Nenhum é obrigatório para o site funcionar —
-todos têm fallback — mas os dois primeiros deixam o resultado muito melhor.
+Nenhum arquivo aqui é obrigatório para o site funcionar. Todos têm um
+substituto automático. Mas os dois primeiros fazem diferença.
 
-| Arquivo | Tamanho sugerido | Onde aparece |
-|---------|------------------|--------------|
-| `claudia.jpg` | 880×1100 (4:5) | Retrato na seção "Sobre". Sem ele, aparece um monograma "CM". |
-| `og-cover.jpg` | 1200×630 | Prévia ao compartilhar o link no WhatsApp, Instagram e Facebook. |
-| `apple-touch-icon.png` | 180×180 | Ícone ao salvar o site na tela inicial do iPhone. |
+| Arquivo | Tamanho | Onde aparece |
+|---|---|---|
+| `claudia.jpg` | 880x1100 (4:5) | Retrato na seção "Sobre". Sem ele entra um monograma "CM". |
+| `og-cover.jpg` | 1200x630 | Prévia quando o link é compartilhado no WhatsApp, Instagram e Facebook. |
+| `apple-touch-icon.png` | 180x180 | Ícone ao salvar o site na tela inicial do iPhone. |
 
-Dica: comprima as imagens em https://squoosh.app antes de subir (alvo: até 200 KB cada).
+Vale comprimir as imagens em squoosh.app antes de subir. Alvo: até 200 KB cada.
