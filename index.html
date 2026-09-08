@@ -1144,7 +1144,9 @@
 
     .portrait__frame {
       position: relative;
-      aspect-ratio: 4/5;
+      /* Quadrado para aproveitar a foto de perfil inteira, sem corte.
+         Trocar para 4/5 se a foto enviada for vertical. */
+      aspect-ratio: 1/1;
       border-radius: var(--r-lg);
       overflow: hidden;
       background: linear-gradient(160deg, var(--ink-3), var(--ink-4));
@@ -1156,8 +1158,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* Ajuste este valor se o rosto ficar mal enquadrado no corte */
-      object-position: 50% 30%;
+      /* Ajuste se o rosto ficar mal enquadrado */
+      object-position: 50% 50%;
     }
 
     /* Aparece quando a foto não está disponível */
@@ -3012,7 +3014,7 @@
             <!-- Foto em assets/claudia.jpg. Sem o arquivo, entra o monograma abaixo.
                  Se o enquadramento cortar mal, ajuste object-position em .portrait__frame img -->
             <img id="claudiaFoto" src="assets/claudia.jpg" alt="Cláudia Mesti, assessora de viagens" width="440"
-              height="550" loading="lazy" decoding="async">
+              height="440" loading="lazy" decoding="async">
             <div class="portrait__fallback" id="claudiaFallback" hidden>
               <b>CM</b>
               <span>Cláudia Mesti</span>

@@ -15,11 +15,13 @@ no fim do arquivo. Troque `5566999999999` pelo número da Cláudia no formato
 
 **2. Foto da Cláudia.** Salve na pasta `assets/` com o nome `claudia`. A
 extensão pode ser `.jpg`, `.jpeg`, `.png` ou `.webp`, o site testa as quatro.
-O ideal é 880x1100px (proporção 4:5), mas foto quadrada de perfil também
-funciona: o corte é feito nas laterais e o rosto fica centralizado. Sem esse
-arquivo aparece um monograma "CM" no lugar, nunca uma imagem quebrada. Se o
-enquadramento cortar mal, ajuste `object-position` na regra
-`.portrait__frame img`.
+O quadro é quadrado, então o ideal é uma foto quadrada de pelo menos
+900x900px. A foto atual tem 422x422px, que é o tamanho de foto de perfil do
+Instagram e fica um pouco borrada em celular. Vale pedir o arquivo original
+para a Cláudia. Sem esse arquivo aparece um monograma "CM" no lugar, nunca uma
+imagem quebrada. Se o enquadramento cortar mal, ajuste `object-position` na
+regra `.portrait__frame img`. Se a foto nova for vertical, troque
+`aspect-ratio` para `4/5` na regra `.portrait__frame`.
 
 **3. Domínio.** Trocar `https://claudiamestiviagens.com.br/` nas tags
 `canonical`, `og:url` e no bloco de dados estruturados no topo do arquivo.
