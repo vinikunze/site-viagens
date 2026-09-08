@@ -2217,7 +2217,13 @@
       opacity: 1;
     }
 
-    .ig__embed:empty {
+    /* Enquanto o widget carrega, reserva altura para a página não saltar.
+       Se ele não vier, o bloco colapsa e a galeria de reserva assume. */
+    .ig__embed.aguardando {
+      min-height: clamp(260px, 32vw, 420px);
+    }
+
+    .ig__embed:empty:not(.aguardando) {
       display: none;
     }
 
@@ -3785,9 +3791,9 @@
           está sempre viajando</p>
 
         <!-- Widget Elfsight, opcional. Sem ele, fica a galeria abaixo. -->
-        <div class="ig__embed elfsight-app-accc0f55-b407-495f-af72-612d82778aa6" data-elfsight-app-lazy></div>
+        <div class="ig__embed elfsight-app-8de620c6-17ef-405f-a291-374c6bb15cc2" data-elfsight-app-lazy></div>
 
-        <div class="ig__grid" data-reveal style="margin-top:2.5rem">
+        <div class="ig__grid" id="igReserva" data-reveal style="margin-top:2.5rem">
           <a href="https://www.instagram.com/claudiamestiviagens" target="_blank" rel="noopener"
             aria-label="Ver publicações no Instagram">
             <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=70&w=400&h=400"
@@ -4211,6 +4217,37 @@
             dotTick = false;
           });
         }, { passive: true });
+      }
+
+      /* ===============================================================
+         Instagram: galeria de reserva só entra se o widget não carregar
+         =============================================================== */
+      var igWidget = document.querySelector('.ig__embed');
+      var igReserva = document.getElementById('igReserva');
+      if (igWidget && igReserva) {
+        var ESPERA = 5000;
+        igReserva.hidden = true;
+        igWidget.classList.add('aguardando');
+
+        var resolveIg = function (carregou) {
+          igWidget.classList.remove('aguardando');
+          igReserva.hidden = carregou;
+        };
+
+        var prazoIg = setTimeout(function () {
+          resolveIg(igWidget.childElementCount > 0);
+        }, ESPERA);
+
+        if ('MutationObserver' in window) {
+          var obsIg = new MutationObserver(function () {
+            if (igWidget.childElementCount > 0) {
+              clearTimeout(prazoIg);
+              obsIg.disconnect();
+              resolveIg(true);
+            }
+          });
+          obsIg.observe(igWidget, { childList: true });
+        }
       }
 
       /* ===============================================================

@@ -30,10 +30,19 @@ Opcionais: `assets/og-cover.jpg` (1200x630px, imagem que aparece quando o link �
 compartilhado no WhatsApp) e `assets/apple-touch-icon.png` (180x180px, ícone ao
 salvar na tela inicial do iPhone).
 
-O widget do Instagram é da Elfsight e é opcional. Se a conta não estiver
-configurada, ele não aparece e a galeria estática logo abaixo cobre a seção.
-Para tirar de vez, apague a última tag `<script src="https://elfsightcdn.com...">`
-e a `<div class="ig__embed ...">`.
+O widget do Instagram é da Elfsight, app `8de620c6-17ef-405f-a291-374c6bb15cc2`,
+conectado à conta @claudiamestiviagens. Ele puxa os posts em tempo real.
+
+Se o widget não carregar em 5 segundos, por queda de rede ou por estouro da cota
+do plano, uma galeria de reserva aparece no lugar e a seção nunca fica vazia.
+Atenção: o plano grátis da Elfsight tem limite de visualizações por mês. Quando
+estourar, os visitantes passam a ver a galeria de reserva, que hoje usa fotos de
+banco de imagem. Vale trocar essas quatro fotos por fotos reais da Cláudia (estão
+no `index.html`, no bloco `id="igReserva"`).
+
+Para trocar o widget, basta substituir o ID na classe `elfsight-app-...`. Para
+tirar de vez, apague a última tag `<script src="https://elfsightcdn.com...">` e a
+`<div class="ig__embed ...">`; a galeria de reserva assume sozinha.
 
 ## Publicar
 
