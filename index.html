@@ -4225,7 +4225,12 @@
       var igWidget = document.querySelector('.ig__embed');
       var igReserva = document.getElementById('igReserva');
       if (igWidget && igReserva) {
-        var ESPERA = 5000;
+        // O widget tem carregamento sob demanda (data-elfsight-app-lazy): só
+        // começa a montar quando entra na tela. Por isso a contagem começa na
+        // visibilidade da seção, não no carregamento da página.
+        var ESPERA = 8000;
+        var prazoIg = null;
+
         igReserva.hidden = true;
         igWidget.classList.add('aguardando');
 
@@ -4234,10 +4239,15 @@
           igReserva.hidden = carregou;
         };
 
-        var prazoIg = setTimeout(function () {
-          resolveIg(igWidget.childElementCount > 0);
-        }, ESPERA);
+        var contarIg = function () {
+          if (prazoIg) return;
+          prazoIg = setTimeout(function () {
+            resolveIg(igWidget.childElementCount > 0);
+          }, ESPERA);
+        };
 
+        // Fica ligado mesmo depois do prazo: se o widget montar atrasado,
+        // a reserva sai de cena.
         if ('MutationObserver' in window) {
           var obsIg = new MutationObserver(function () {
             if (igWidget.childElementCount > 0) {
@@ -4247,6 +4257,18 @@
             }
           });
           obsIg.observe(igWidget, { childList: true });
+        }
+
+        if ('IntersectionObserver' in window) {
+          var visIg = new IntersectionObserver(function (entradas) {
+            if (entradas[0].isIntersecting) {
+              visIg.disconnect();
+              contarIg();
+            }
+          }, { rootMargin: '250px' });
+          visIg.observe(igWidget);
+        } else {
+          contarIg();
         }
       }
 
