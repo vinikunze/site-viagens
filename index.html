@@ -3951,16 +3951,26 @@
       var ano = document.getElementById('ano');
       if (ano) ano.textContent = new Date().getFullYear();
 
-      /* Fallback caso o arquivo da foto não exista */
+      /* Aceita a foto em qualquer extensão comum. Se nenhuma existir,
+         entra o monograma no lugar. */
       var foto = document.getElementById('claudiaFoto');
       var fotoAlt = document.getElementById('claudiaFallback');
       if (foto && fotoAlt) {
-        var mostraFallback = function () {
-          foto.style.display = 'none';
-          fotoAlt.hidden = false;
+        var arquivos = ['assets/claudia.jpg', 'assets/claudia.jpeg', 'assets/claudia.png', 'assets/claudia.webp'];
+        var tentativa = 0;
+
+        var proximoArquivo = function () {
+          tentativa++;
+          if (tentativa < arquivos.length) {
+            foto.src = arquivos[tentativa];
+          } else {
+            foto.style.display = 'none';
+            fotoAlt.hidden = false;
+          }
         };
-        foto.addEventListener('error', mostraFallback);
-        if (foto.complete && foto.naturalWidth === 0) mostraFallback();
+
+        foto.addEventListener('error', proximoArquivo);
+        if (foto.complete && foto.naturalWidth === 0) proximoArquivo();
       }
 
       /* ===============================================================

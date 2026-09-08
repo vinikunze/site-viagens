@@ -13,10 +13,13 @@ Três coisas precisam do dado real:
 no fim do arquivo. Troque `5566999999999` pelo número da Cláudia no formato
 `55` + DDD + número. Um lugar só atualiza todos os botões do site.
 
-**2. Foto da Cláudia.** Salve em `assets/claudia.jpg`. O ideal é 880x1100px
-(proporção 4:5). Sem esse arquivo aparece um monograma "CM" no lugar, nunca uma
-imagem quebrada. Se o enquadramento cortar mal, ajuste `object-position` na
-regra `.portrait__frame img`.
+**2. Foto da Cláudia.** Salve na pasta `assets/` com o nome `claudia`. A
+extensão pode ser `.jpg`, `.jpeg`, `.png` ou `.webp`, o site testa as quatro.
+O ideal é 880x1100px (proporção 4:5), mas foto quadrada de perfil também
+funciona: o corte é feito nas laterais e o rosto fica centralizado. Sem esse
+arquivo aparece um monograma "CM" no lugar, nunca uma imagem quebrada. Se o
+enquadramento cortar mal, ajuste `object-position` na regra
+`.portrait__frame img`.
 
 **3. Domínio.** Trocar `https://claudiamestiviagens.com.br/` nas tags
 `canonical`, `og:url` e no bloco de dados estruturados no topo do arquivo.
